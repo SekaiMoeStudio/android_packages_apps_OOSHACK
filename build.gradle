@@ -1,29 +1,18 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+// build.gradle (项目根目录)
 buildscript {
-    
     repositories {
         google()
-        jcenter()
-        
+        mavenCentral() // 👈 替换 jcenter()（已废弃）
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
-        
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:7.4.2' // 👈 升级到 7.4.2（支持 compileSdk 34）
+        // 如果你想用更新的，也可以用 8.0.2，但需同步升级 Gradle
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
-        
+        mavenCentral() // 👈 替换 jcenter()
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
